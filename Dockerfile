@@ -45,6 +45,6 @@ RUN mkdir /root/.local/share/Terraria/tModLoader/Mods
 
 	# execution script
 COPY entrypoint.sh .
-
+ENV steam_server="false"
 	# start server by running the execution script
 ENTRYPOINT ["bash", "-c", "./entrypoint.sh"]
