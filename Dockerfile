@@ -1,7 +1,7 @@
-FROM steamcmd/steamcmd:ubuntu-20
+FROM steamcmd/steamcmd:latest
 
-ARG TMOD_VERSION=2022.09.47.48
-ARG TERRARIA_VERSION=1436
+ARG TMOD_VERSION=v2023.11.2.0
+ARG TERRARIA_VERSION=1449
 
 
 	# ports used
@@ -21,7 +21,7 @@ WORKDIR /root/terraria-server
 	
 
 	# add in tModLoader 
-RUN wget https://github.com/tModLoader/tModLoader/releases/download/v${TMOD_VERSION}/tModLoader.zip 
+RUN wget https://github.com/tModLoader/tModLoader/releases/download/${TMOD_VERSION}/tModLoader.zip 
 RUN unzip -o tModLoader.zip 
 RUN rm tModLoader.zip 
 RUN chmod u+x ./start-tModLoaderServer.sh
