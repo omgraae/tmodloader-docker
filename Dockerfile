@@ -14,7 +14,7 @@ RUN apt -y clean
 
 	# helps terraria find the steamclient shared library
 RUN mkdir -p /root/.steam/sdk64
-RUN ln -s /root/.steam/steamcmd/linux64/steamclient.so /root/.steam/sdk64/steamclient.so
+#RUN ln -s /root/.steam/steamcmd/linux64/steamclient.so /root/.steam/sdk64/steamclient.so
 
 
 WORKDIR /root/terraria-server 

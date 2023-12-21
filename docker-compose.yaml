@@ -1,7 +1,7 @@
 services:
   tModLoader:
     build: .
-    image: guillheu/tmodloader-dedicated-server
+    image: localhost/tmodloader
     volumes:
       # - ./Mods:/root/.local/share/Terraria/tModLoader/Mods
       - ./Worlds:/root/.local/share/Terraria/tModLoader/Worlds
