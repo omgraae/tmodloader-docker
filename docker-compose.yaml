@@ -3,15 +3,18 @@ services:
     build: .
     image: localhost/tmodloader
     volumes:
-      - ./Mods:/root/.local/share/Terraria/tModLoader/Mods
-      - ./Worlds:/root/.local/share/Terraria/tModLoader/Worlds
-      - ./serverconfig.txt:/root/terraria-server/serverconfig.txt
-      - ./install.txt:/root/terraria-server/install.txt
-      - ./enabled.json:/root/.local/share/Terraria/tModLoader/Mods/enabled.json
+      - terraria_tModLoader:/root/.local/share/Terraria/tModLoader
+      # Mapping the world and mods folder to the volume specified abobe. Direct mappings commented out:
+      #- ./data/Mods:/root/.local/share/Terraria/tModLoader/Mods
+      #- ./data/Worlds:/root/.local/share/Terraria/tModLoader/Worlds
+      #- ./data/enabled.json:/root/.local/share/Terraria/tModLoader/Mods/enabled.json:Z
+      - ./data/serverconfig.txt:/root/terraria-server/serverconfig.txt:Z
+      - ./data/install.txt:/root/terraria-server/install.txt:Z
+
     ports:
       - "7777:7777"
     
     # stdin_open: true
     # tty: true
-#volumes:
-#  terraria:
+volumes:
+  terraria_tModLoader:

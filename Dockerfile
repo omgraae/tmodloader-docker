@@ -1,6 +1,6 @@
 FROM steamcmd/steamcmd:latest
 
-ARG TMOD_VERSION=v2023.11.2.0
+ARG TMOD_VERSION=v2023.10.3.0
 ARG TERRARIA_VERSION=1449
 
 
@@ -38,8 +38,9 @@ RUN chmod u+x LaunchUtils/ScriptCaller.sh
 
 	# create Worlds and Mods directories
 	# should be auto-created if user mounts their local directories to the container, but perhaps for some reason the user wants ephemeral Mods or Worlds folders ?
-RUN mkdir -p /root/.local/share/Terraria/tModLoader/Worlds 
-RUN mkdir /root/.local/share/Terraria/tModLoader/Mods
+#RUN mkdir -p /root/.local/share/Terraria/tModLoader/Worlds 
+#RUN mkdir /root/.local/share/Terraria/tModLoader/Mods
+RUN mkdir -p /root/.local/share/Terraria/tModLoader
 
 # RUN echo "-steamworkshopfolder /root/tmod/" > cli-argsConfig.txt
 
